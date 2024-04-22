@@ -1,0 +1,15 @@
+<div class="alert alert-danger" role="alert" *ngIf="error">
+  <div class="api-error" *ngIf="errorCodeDefined()">
+    <div>
+      Failed calling Kafdrop API (code {{ error.code }}).
+    </div>
+    <div class="login-link" *ngIf="error.code === 0 || !error.ok">
+      Are you <a [href]="kafdropUrl | async" target="_blank" class="alert-link">authenticated</a>?
+    </div>
+  </div>
+  <div *ngIf="!errorCodeDefined()">
+    <div *ngFor="let messageLine of error.message.split('\n')">
+      {{ messageLine }}
+    </div>
+  </div>
+</div>

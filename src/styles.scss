@@ -1,0 +1,16 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+  width: 300px;
+
+  .ui-tooltip {
+    .ui-tooltip-text {
+      background-color: white !important;
+      color: dimgray !important;
+      border: 1px solid lightgray;
+    }
+
+    &.ui-tooltip-top .ui-tooltip-arrow {
+      border-top-color: darkgray !important;
+    }
+  }
+}

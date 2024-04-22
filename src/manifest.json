@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+
+  "name": "Kafdrop Searcher",
+  "description": "Search for Kafka records by timestamp using Kafdrop API",
+  "version": "1.3.5",
+
+  "action": {
+    "default_icon": {
+      "32": "assets/icon32.png"
+    },
+    "default_popup": "index.html"
+  },
+  "icons": {
+    "16": "assets/icon16.png",
+    "48": "assets/icon48.png",
+    "128": "assets/icon128.png"
+  },
+  "permissions": [
+    "storage",
+    "unlimitedStorage"
+  ],
+  "host_permissions": [
+    "https://*/*"
+  ]
+}

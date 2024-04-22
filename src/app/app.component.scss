@@ -1,0 +1,95 @@
+.container-fluid {
+  margin: 10px 0;
+
+  .header {
+    text-align: center;
+
+    .kafdrop-logo {
+      height: 35px;
+    }
+
+    .header-text {
+      vertical-align: bottom;
+      margin: 0 0 -6px -8px;
+      display: inline-block;
+    }
+
+    a {
+      margin-right: 16px;
+    }
+  }
+
+  .loader-container {
+    text-align: center;
+
+    .spinner-border {
+      margin: 30px;
+      width: 3rem;
+      height: 3rem;
+    }
+  }
+
+  .form {
+    margin-bottom: 16px;
+
+    .form-group {
+      width: 100%;
+
+      .form-control.ng-pristine.ng-invalid {
+        border: 1px solid #a80000;
+      }
+
+      .pi {
+        vertical-align: text-top;
+        color: darkgray;
+      }
+    }
+
+    p-autoComplete {
+      width: 100%;
+
+      ::ng-deep .ui-autocomplete {
+        width: 100%;
+
+        .ui-autocomplete-panel {
+          max-width: 100%;
+          left: inherit;
+          word-break: break-all;
+        }
+
+        .ui-inputtext {
+          width: 100%;
+          border-top-right-radius: 0;
+          border-bottom-right-radius: 0;
+          border-right: 0;
+        }
+      }
+    }
+
+    p-button {
+      direction: rtl;
+
+      ::ng-deep button {
+        padding-right: .5em;
+
+        .spinner-border {
+          margin-right: .5em;
+        }
+
+        .ui-button-text {
+          display: inline-block;
+          padding-right: .5em;
+        }
+      }
+    }
+  }
+
+  .search-progress {
+    padding: 0 10px;
+    font-size: .8em;
+  }
+
+  app-alert {
+    margin-top: 16px;
+  }
+}

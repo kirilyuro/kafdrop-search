@@ -1,0 +1,62 @@
+<div class="container-fluid">
+  <h4 class="header">
+    <a [href]="kafdropUrl" target="_blank">
+      <img class="kafdrop-logo" src="assets/icon128.png" alt="K">
+      <span class="header-text">afdrop</span>
+    </a>
+    <span class="header-text">Search</span>
+  </h4>
+  <div class="loader-container">
+    <span class="spinner-border" *ngIf="initializing"></span>
+  </div>
+  <div class="form" *ngIf="topics">
+    <label class="form-group">Topic
+      <span class="ui-inputgroup">
+        <p-autoComplete
+          [(ngModel)]="topic" [suggestions]="filteredTopics" field="name" [forceSelection]="true"
+          (completeMethod)="filterTopics($event.query)" (onFocus)="selectOnFocus($event)"
+          (onSelect)="storeFormData(); updatePartition()" (onBlur)="handleUnselectedTopic()"
+          [required]="true">
+        </p-autoComplete>
+        <button pButton type="button" icon="pi pi-refresh" title="Reload topics" (click)="reloadTopics()"></button>
+      </span>
+    </label>
+    <label class="form-group">Key
+      <input type="text" pInputText class="form-control" [(ngModel)]="key" [required]="true"
+             (input)="updatePartition(); storeFormData()" (focusin)="selectOnFocus($event)">
+    </label>
+    <label class="form-group">
+      <span>
+        Timestamp
+        <i class="pi pi-info-circle" pTooltip="In ISO 8601 format" tooltipPosition="top"></i>
+      </span>
+      <input type="text" pInputText class="form-control" [(ngModel)]="timestamp" [pattern]="timestampPattern"
+             placeholder="2020-01-01T00:00:00.000Z"
+             (input)="storeFormData(); validateTimestamp()" (focusin)="selectOnFocus($event)" [required]="true">
+    </label>
+    <label class="form-group">Partition
+      <input type="text" pInputText class="form-control" [ngModel]="partition" disabled="disabled">
+    </label>
+    <p-button label="Search" [disabled]="!(topic && key && isValidTimestamp && kafdropUrl) || searching" (onClick)="search()">
+      <span class="spinner-border spinner-border-sm" [hidden]="!searching"></span>
+    </p-button>
+    <span class="search-progress">{{ searchProgress }}</span>
+  </div>
+  <app-alert></app-alert>
+  <p-accordion>
+    <p-accordionTab header="Settings">
+      <div class="form">
+        <label class="form-group">Kafdrop URL
+          <input type="text" pInputText class="form-control" [(ngModel)]="kafdropUrl"
+                 [required]="true" placeholder="https://kafdrop.example.com/"
+                 (input)="handleKafdropUrlInput()" (blur)="handleKafdropUrlChange()" (focusin)="selectOnFocus($event)">
+        </label>
+        <label class="form-group">Auto-scroll pages
+          <input type="number" pInputText class="form-control" [(ngModel)]="autoScrollPages"
+                 (input)="storeSettings()" (focusin)="selectOnFocus($event)">
+        </label>
+        <p-button label="Reset Defaults" (onClick)="resetDefaultSettings()"></p-button>
+      </div>
+    </p-accordionTab>
+  </p-accordion>
+</div>
