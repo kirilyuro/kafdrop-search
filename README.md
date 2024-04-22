@@ -1,12 +1,12 @@
-# kafdrop-searcher
-Chrome extension utility that helps find stuff in Kafdrop.  
-A [general description of how this works](https://github.com/kirilyuro/kafdrop-searcher/wiki) (and the **underlying assumptions**).
+# kafdrop-search
+Chrome extension utility that helps find stuff in [Kafdrop](https://github.com/obsidiandynamics/kafdrop).  
+A [general description of how this works](https://github.com/kirilyuro/kafdrop-search/blob/main/wiki.md#how-does-it-work) (and the **underlying assumptions**).
  
 Originally generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.5.
 
 ## Installation
 
-* Download the [latest release](https://github.com/kirilyuro/kafdrop-searcher/releases/latest) archive
+* Download the [latest release](https://github.com/kirilyuro/kafdrop-search/releases/latest) archive
 * Extract it
 * Load it into Chrome as an unpacked extension:
   * Open [Extensions](chrome://extensions/)
@@ -45,7 +45,7 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 You can then load the built extension into Chrome as an unpacked extension:
 * Open [Extensions](chrome://extensions/)
 * Turn on `Developer mode`
-* `Load unpacked` from the `dist/kafdrop-searcher/` directory.
+* `Load unpacked` from the `dist/kafdrop-search/` directory.
 
 To automatically update artifacts on changes, run `ng build --watch`.
 

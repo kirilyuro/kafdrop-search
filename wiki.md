@@ -1,10 +1,10 @@
-Welcome to the `kafdrop-searcher` wiki!
+Welcome to the `kafdrop-search` wiki!
 
 ## How does it work?
-`kafdrop-searcher` employs a heuristic binary search using the Kafdrop API.  
+`kafdrop-search` employs a heuristic binary search using the Kafdrop API.  
 
 It works under the assumption that the record timestamps in the target Kafka topic are generally sorted in ascending order (or in other words, that the record timestamps are directly correlated to their offsets, i.e. the higher the offset - the higher the timestamp).  
-If this is not true for your topic, `kafdrop-searcher` will unfortunately be useless.
+If this is not true for your topic, `kafdrop-search` will unfortunately be useless.
 
 Under this assumption, we can search for a given record timestamp using a heuristic search that performs binary search on the offsets,  
 but compares the timestamps of the records.  
