@@ -80,7 +80,7 @@ export class KafdropApiService {
 
     return from(this.topicMessagesApiUrl(topic)).pipe(
       flatMap(url =>
-        this.http.get<RawKafkaMessage[]>(url, { params: params })
+        this.http.get<RawKafkaMessage[]>(url, { params: {...params, isAnyProto: false} as any })
           .pipe(
             this.alertOnError(),
             map<RawKafkaMessage[], KafkaMessage[]>(messages =>
