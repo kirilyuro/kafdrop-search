@@ -6,12 +6,7 @@ Originally generated with [Angular CLI](https://github.com/angular/angular-cli) 
 
 ## Installation
 
-* Download the [latest release](https://github.com/kirilyuro/kafdrop-search/releases/latest) archive
-* Extract it
-* Load it into Chrome as an unpacked extension:
-  * Open [Extensions](chrome://extensions/)
-  * Turn on `Developer mode`
-  * `Load unpacked` from the extracted directory
+Install the extension via [Chrome Web Store](https://chromewebstore.google.com/detail/njgkfodpkeoepedlabcadaocogcgmifm).
   
 ## Usage
 
